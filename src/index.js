@@ -4,6 +4,7 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
+
 // TODO: Switch to https://github.com/palmerhq/the-platform#stylesheet when it will be stable
 const styleLink = document.createElement("link");
 styleLink.rel = "stylesheet";
