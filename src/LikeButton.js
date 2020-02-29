@@ -1,8 +1,21 @@
 import React from 'react';
 import { Icon } from "semantic-ui-react";
 
+const CommentIcon = () => {
+    return (
+        <div className="three wide column">
+            <Icon 
+                name="comment outline"
+                color="black"
+                size="big"
+                className="heart-icon"
+            />
+        </div>
+    );
+}
 
 class LikeButton extends React.Component {
+    
     
       render() {
         const isClicked = this.props.liked;
@@ -33,20 +46,7 @@ class LikeButton extends React.Component {
                     &nbsp; <span className="love-text">{this.props.loveCount} Likes</span>
                     </abbr>
                 </div>
-
-              {/* <span className="love-text">{this.props.loveCount} Likes</span>
-              <span> <b>hacker-cat</b> When you get to know array starts at 0 not 1. 😟</span>
-               */}
-
-                    <div className="three wide column">
-                        <Icon 
-                            name="comment outline"
-                            color="black"
-                            size="big"
-                            className="heart-icon"
-                        />
-                    </div>
-                    
+                <CommentIcon onClick={this.props.onClick} />
                 </div>
               </div>
         );

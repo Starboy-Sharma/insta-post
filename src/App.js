@@ -1,5 +1,6 @@
 import React from 'react';
 import LikeButton from './LikeButton';
+import Comment from './Comment';
 import './App.css';
 
 class App extends React.Component {
@@ -11,6 +12,7 @@ class App extends React.Component {
         };
 
         this.handleLoveClick = this.handleLoveClick.bind(this);
+        this.handleLoveCount = this.handleLoveCount.bind(this);
       }
 
       handleLoveClick() {
@@ -38,8 +40,12 @@ class App extends React.Component {
                     <div className="post-container shadow">
 
                         <div className="profile">
-                            <img src={'/assets/images/cat-profile.jpg'} alt="Cat Spy" />
-
+                            <a href="https://github.com/Starboy-Sharma/" title="Github Page" 
+                             target="_blank"
+                             rel="noopener noreferrer"
+                            >
+                                <img src={'/assets/images/cat-profile.jpg'} alt="Cat Spy" />
+                            </a>    
                             <div className="user-info">
                                 <p className="username">hacker-cat</p>
                                 <p className="time">10 Min Ago. </p>
@@ -49,7 +55,7 @@ class App extends React.Component {
                         <div className="main">
                             <img 
                                 src="./assets/images/cat-post.PNG"
-                                alt="Beautiful Image"
+                                alt=""
                                 data-content="Add users to your feed"
                                 onDoubleClick={this.handleLoveClick}
                             />
@@ -63,6 +69,15 @@ class App extends React.Component {
                                />
                         </div>
 
+                        <Comment limit = {130} />
+                        
+                    </div>
+                </div>
+                
+
+                <div className="ui one column stackable center aligned page grid">
+                    <div className="column twelve wide">
+                        &copy; Design & Developed By - <b>Pankaj Sharma</b>
                     </div>
                 </div>
             </div>

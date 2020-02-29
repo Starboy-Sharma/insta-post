@@ -19,10 +19,6 @@ class Comment extends React.Component {
     this.setState(state => ({
       characterCount: event.target.value.length
     }));
-
-    setTimeout(() => {
-      console.log(this.state);
-    }, 1000);
   }
 
   render() {
@@ -30,9 +26,6 @@ class Comment extends React.Component {
     let remaining_words = this.props.limit - this.state.characterCount;
 
     return (
-      <div className="ui grid container text-area">
-        <div className="row">
-          <div className="column">
             <Form>
               <Form.Group widths="equal">
                 <Form.Field
@@ -40,15 +33,11 @@ class Comment extends React.Component {
                   label="Write something cool"
                   placeholder="Tell us what are you thinking..."
                   onChange={this.handleChange}
-                  onKeydown={this.handleKeyDown}
                   className="comment-box"  
                 />
               </Form.Group>
-            <span className={"badge " + (remaining_words < 0 ? "red" : "")}> {remaining_words}</span>
+            <span className={"badge " + (remaining_words < 0 ? "color-red" : "")}> {remaining_words}</span>
             </Form>
-          </div>
-        </div>
-      </div>
     );
   }
 }
